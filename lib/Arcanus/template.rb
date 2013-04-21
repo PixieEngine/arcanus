@@ -9,21 +9,22 @@ module Arcanus
 
     argument :location, :type => :string
 
+    # TODO Put html/js/css into directory for Sinatra
+
     def generate_files!
+      # Copy project template
+      directory "project", location
+
       %w[
         Gemfile
-        Guardfile
-        Rakefile
       ].each do |file|
         template file, File.join(location, file)
       end
 
-      # Copy scripts
-      script_dir = File.join(location, "script")
-      directory "script", script_dir
-
+      # Make scripts executable
       # TODO: Why doesn't directory copy keep executable bit?
       # TODO: Why doesn't chmod "*" work?
+      script_dir = File.join(location, "script")
       inside(script_dir) do
         chmod "server", 0755
       end
