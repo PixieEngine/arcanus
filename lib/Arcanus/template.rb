@@ -12,7 +12,9 @@ module Arcanus
     def generate_files!
       %w[
         Gemfile
+        Guardfile
         Rakefile
+        server
       ].each do |file|
         template file, File.join(location, file)
       end
@@ -20,17 +22,10 @@ module Arcanus
 
     def setup!
       inside(location) do
-        # Invoking a new Thor guy should keep output products in the correct directory
-        Arcanus::Setup.new.invoke(:setup)
+        Bundler.with_clean_env do
+          run('bundle install')
+        end
       end
-    end
-  end
-
-  class Setup < ::Thor
-    include Thor::Actions
-
-    def setup
-      run('bundle install')
     end
   end
 end

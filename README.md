@@ -2,21 +2,23 @@
 
 Command line tools for creating amazing games.
 
+
 ## Installation
 
 Install from the command line:
 
     $ gem install arcanus
 
+
 ## Usage
 
 To verify that you have everything installed correctly, you should be able to run the following:
 
-    arcanus --version
+    arcanus version
 
 To create your game:
 
-    arcanus new awesome_game
+    arcanus create awesome_game
 
 
 ## Contributing
