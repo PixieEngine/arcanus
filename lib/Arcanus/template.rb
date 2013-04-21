@@ -19,8 +19,14 @@ module Arcanus
       end
 
       # Copy scripts
-      directory "script", File.join(location, file)
-      chmod File.join(location, "script/*"), 0755
+      script_dir = File.join(location, "script")
+      directory "script", script_dir
+
+      # TODO: Why doesn't directory copy keep executable bit?
+      # TODO: Why doesn't chmod "*" work?
+      inside(script_dir) do
+        chmod "server", 0755
+      end
     end
 
     def setup!
