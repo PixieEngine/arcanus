@@ -20,7 +20,7 @@ module Arcanus
 
       desc "Run the live server"
       task :server do
-        exec "./server"
+        exec "script/server"
       end
 
       # TODO Use thor for windows file stuff

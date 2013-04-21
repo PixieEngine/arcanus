@@ -14,10 +14,13 @@ module Arcanus
         Gemfile
         Guardfile
         Rakefile
-        server
       ].each do |file|
         template file, File.join(location, file)
       end
+
+      # Copy scripts
+      directory "script", File.join(location, file)
+      chmod File.join(location, "script/*"), 0755
     end
 
     def setup!
