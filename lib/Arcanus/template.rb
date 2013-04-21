@@ -9,18 +9,19 @@ module Arcanus
 
     argument :location, :type => :string
 
-    # create Gemfile and bundle
-    def generate_bundle!
-      template "Gemfile", File.join(location, "Gemfile")
-
-      inside(location) do
-        run('bundle install')
+    def generate_files!
+      %w[
+        Gemfile
+        Rakefile
+      ].each do |file|
+        template file, File.join(location, file)
       end
     end
 
-    # create Rakefile
-    def create_rakefile!
-      template "Rakefile", File.join(location, "Rakefile")
+    def setup!
+      inside(location) do
+        run('bundle install')
+      end
     end
   end
 end
