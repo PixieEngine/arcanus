@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "arcanus/cli"
+
+Signal.trap("INT") { exit 1 }
+
+Arcanus::CLI.start

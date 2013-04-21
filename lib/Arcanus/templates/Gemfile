@@ -1,0 +1,3 @@
+source 'https://rubygems.org'
+
+gem "arcanus", "~><%= Arcanus::VERSION %>"

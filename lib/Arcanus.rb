@@ -1,4 +1,4 @@
-require "Arcanus/version"
+require "arcanus/version"
 
 module Arcanus
   # Your code goes here...
