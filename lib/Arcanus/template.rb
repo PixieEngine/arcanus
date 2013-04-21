@@ -20,8 +20,17 @@ module Arcanus
 
     def setup!
       inside(location) do
-        run('bundle install')
+        # Invoking a new Thor guy should keep output products in the correct directory
+        Arcanus::Setup.new.invoke(:setup)
       end
+    end
+  end
+
+  class Setup < ::Thor
+    include Thor::Actions
+
+    def setup
+      run('bundle install')
     end
   end
 end
