@@ -22,8 +22,12 @@ module Arcanus
 
     def setup!
       inside(location) do
-        Bundler.with_clean_env do
-          run('bundle install')
+        fn = -> { run('bundle install') }
+
+        if defined? Bundler
+          Bundler.with_clean_env(&fn)
+        else
+          fn.call
         end
       end
     end
