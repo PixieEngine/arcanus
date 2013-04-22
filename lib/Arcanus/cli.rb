@@ -1,5 +1,6 @@
 require "thor"
 require "arcanus/template"
+require "arcanus/version"
 
 module Arcanus
   class CLI < ::Thor

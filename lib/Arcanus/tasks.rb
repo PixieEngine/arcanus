@@ -18,9 +18,14 @@ module Arcanus
         sh "cat lib/*.js build/src.js > game.js"
       end
 
+      desc "Automatically compile changed files"
+      task :guard do
+        exec "bundle exec guard start"
+      end
+
       desc "Run the live server"
       task :server do
-        exec "script/server"
+        exec "bundle exec script/server"
       end
 
       # TODO Use thor for windows file stuff
