@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem "arcanus", "~><%= Arcanus::VERSION %>"
-gem "guard"
+gem "bjork"
 gem "sinatra"
 gem "thin"
