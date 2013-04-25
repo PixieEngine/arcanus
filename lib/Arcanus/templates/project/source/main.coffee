@@ -3,7 +3,7 @@
 canvas = $("canvas").pixieCanvas()
 
 window.engine = Engine
-  backgroundColor: Color("Light Slate Gray")
+  backgroundColor: Color("Slate Gray").lighten(0.2)
   canvas: canvas
   FPS: 60
 
