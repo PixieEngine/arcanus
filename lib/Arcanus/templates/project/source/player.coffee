@@ -6,7 +6,6 @@ Player = (I={}) ->
     width: 16
     height: 16
     speed: 90
-    color: Color("honeydew")
 
   # The player is a GameObject
   self = GameObject(I)
