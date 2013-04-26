@@ -20,6 +20,11 @@ To create your game:
 
     arcanus create awesome_game
 
+To run your game:
+
+    cd awesome_game
+    bundle exec rake start
+    # Go to http://localhost:4567 in your browser
 
 ## Contributing
 
