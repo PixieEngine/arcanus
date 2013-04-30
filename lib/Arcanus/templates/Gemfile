@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
 
 gem "bjork"
-gem "sinatra"
 gem "thin"
