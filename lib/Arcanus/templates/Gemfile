@@ -1,4 +1,9 @@
 source 'https://rubygems.org'
 
 gem "bjork"
+gem "rake"
 gem "thin"
+
+group :plugins do
+  # Add plugins here
+end
